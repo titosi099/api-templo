@@ -1,0 +1,26 @@
+{
+  "name": "api-templo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node",
+    "lint": "node_modules\\.bin\\standard **/*.js",
+    "lint:fix": "node_modules\\.bin\\standard **/*.js --fix"
+  },
+  "author": "eliton",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "body-parser": "^1.16.0",
+    "bookshelf": "^0.10.3",
+    "express": "^4.14.1",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2"
+  }
+}
