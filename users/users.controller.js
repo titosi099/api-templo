@@ -50,6 +50,14 @@ class UsersController {
       .then(result => defaultResponse(result.toJSON()))
       .catch(err => errorResponse(err.message, 422))
   }
+
+  delete (idUser) {
+    return this.Users
+      .where({usu_codigo: idUser})
+      .destroy()
+      .then(result => defaultResponse(result.toJSON(), 204))
+      .catch(err => errorResponse(err.message, 422))
+  }
 }
 
 export default UsersController

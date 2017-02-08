@@ -31,4 +31,10 @@ export default app => {
         .then(response => res.status(response.statusCode).json(response.data))
         .catch(() => res.sendStatus(500))
     })
+    .delete((req, res) => {
+      usersController
+        .delete(req.params.id)
+        .then(response => res.status(response.statusCode).json(response.data))
+        .catch(() => res.sendStatus(500))
+    })
 }
