@@ -4,6 +4,7 @@ export default app => {
   const usersController = new UsersController()
   app
     .route('/users')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       usersController
         .getAll()
@@ -19,6 +20,7 @@ export default app => {
 
   app
     .route('/users/:id')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       usersController
         .getById(req.params.id)

@@ -4,6 +4,7 @@ export default (app) => {
   const membersController = new MembersController()
   app
     .route('/members')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       membersController
         .getAll()
@@ -18,6 +19,7 @@ export default (app) => {
 
   app
     .route('/members/:id')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       membersController
       .getById(req.params.id)
